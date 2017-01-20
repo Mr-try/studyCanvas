@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多线段</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+    您的破浏览器不支持canvas
+</canvas>
+<script>
+    window.onload=function () {
+        let canvas = document.getElementById("canvas");
+        canvas.width = 800;
+        canvas.height = 600;
+        let context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(100,200); //移动画笔至100,200点，原点为canvas画布左上角
+        context.lineTo(200,300); //打算从上一笔的停止点划线到200,300点（moveTo,lineTo都只是状态，是打算画，还没开始画）
+        context.lineWidth = 5;
+        context.strokeStyle = "#FFC0CB";
+        context.stroke();//（fill:填充，stroke:描边）
+
+        context.beginPath();
+        context.moveTo(200,300);
+        context.lineTo(300,200);
+        context.lineWidth = 5;
+        context.strokeStyle = "#FFA07A";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(300,200);
+        context.lineTo(400,300);
+        context.lineWidth = 5;
+        context.strokeStyle = "#FF7256";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(400,300);
+        context.lineTo(500,200);
+        context.lineWidth = 5;
+        context.strokeStyle = "#FF6347";
+        context.stroke();
+    }
+</script>
+</body>
+</html>
