@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>从线段开始</title>
+</head>
+<body>
+    <canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+        您的破浏览器不支持canvas
+    </canvas>
+    <script>
+        window.onload=function () {
+            let canvas = document.getElementById("canvas");
+            canvas.width = 800;
+            canvas.height = 600;
+            let context = canvas.getContext("2d");
+
+            context.moveTo(100,100); //移动画笔至100,100点，原点为canvas画布左上角
+            context.lineTo(600,600); //打算从上一笔的停止点划线到600,600点（moveTo,lineTo都只是状态，是打算画，还没开始画）
+            context.lineWidth = 5;
+            context.strokeStyle = "#AA394C";
+            context.stroke();//（fill:填充，stroke:描边）
+        }
+    </script>
+</body>
+</html>
