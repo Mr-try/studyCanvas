@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>矩形</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+    您的破浏览器不支持canvas
+</canvas>
+<script>
+    window.onload=function () {
+        let canvas = document.getElementById("canvas");
+        canvas.width = 800;
+        canvas.height = 600;
+        let context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.rect(0,0,800,600);
+        context.fillStyle = "#AA9033";
+        context.fill();
+
+        context.beginPath();
+        for (let i = 0;i<20;i++){
+            drawRect(context,200+10*i,100+10*i,400-20*i,400-20*i,"white");
+            drawRect(context,205+10*i,105+10*i,390-20*i,390-20*i,"black");
+        }
+        context.beginPath();
+        context.rect(395,295,5,5);
+        context.fillStyle = "black";
+        context.lineWidth = 5;
+        context.fill();
+        context.stroke();
+        function drawRect(cxt,x,y,width,height,color) {
+            cxt.beginPath();
+            cxt.rect(x,y,width,height);
+            cxt.lineWidth = 5;
+            cxt.strokeStyle = color;
+            cxt.stroke();
+        }
+    }
+</script>
+</body>
+</html>
